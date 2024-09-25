@@ -179,8 +179,11 @@ public class AppleMusicObserver: ObservableObject{
                 return
             }
             
-            if(abs(currentTrack.endTimestamp - newTrack.endTimestamp) > 3 && newState == .PLAYING){
-                AppleMusicActivityApp.logger.info("[AppleMusicObserver] Timeline is out of sync {current=\(currentTrack.startTimestamp), recorded=\(newTrack.startTimestamp)}")
+            let currentTrackRefTime = currentTrack.timestamp + currentTrack.duration - currentTrack.position
+            let newTrackRefTime = newTrack.timestamp + newTrack.duration - newTrack.position
+            
+            if(abs(currentTrackRefTime - newTrackRefTime) > 3 && newState == .PLAYING){
+                AppleMusicActivityApp.logger.info("[AppleMusicObserver] Timeline is out of sync {current=\(currentTrack.position), new=\(newTrack.position)}")
                 handleUpdate(newTrack, newState)
             }
             

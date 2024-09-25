@@ -42,16 +42,4 @@ public class AppleMusicTrack {
         self.position = position
         self.timestamp = Date.now.timeIntervalSince1970
     }
-    
-    
-    
-    
-    public var endTimestamp: Double{
-        self.timestamp + duration - position
-    }
-    
-    public var startTimestamp: Double{
-        self.timestamp + duration
-    }
-
 }
