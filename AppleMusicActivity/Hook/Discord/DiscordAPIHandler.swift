@@ -71,7 +71,7 @@ public class DiscordAPIHandler{
         
         let now = Date.now.timeIntervalSince1970
         let timestamp = Timestamps(start: Int(now - track.position), end: Int(now + track.duration - track.position))
-        let assets = Assets(largeImage: track.artworkUrl, largeText: "Apple Music", smallImage: nil, smallText: nil)
+        let assets = Assets(largeImage: track.artworkUrl, largeText: track.album ?? "Apple Music", smallImage: nil, smallText: nil)
         
         var buttons: [Button] = []
         if(track.album != nil && track.album!.count > 1 && track.album!.count < 32){
