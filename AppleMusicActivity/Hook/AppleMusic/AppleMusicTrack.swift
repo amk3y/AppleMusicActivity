@@ -26,7 +26,11 @@ public class AppleMusicTrack {
         self.name = name
         self.artist = artist
         self.artwork = artwork
-        self.album = album
+        if let isAlbumNameEmpty = album?.isEmpty{
+            self.album = isAlbumNameEmpty ? nil : album
+        }else {
+            self.album = album
+        }
         self.duration = duration
         self.position = position
         self.timestamp = Date.now.timeIntervalSince1970
@@ -36,7 +40,11 @@ public class AppleMusicTrack {
         self.databaseId = databaseId
         self.name = name
         self.artist = artist
-        self.album = album
+        if let isAlbumNameEmpty = album?.isEmpty{
+            self.album = isAlbumNameEmpty ? nil : album
+        }else {
+            self.album = album
+        }
         self.artwork = artwork == nil ? nil : NSImage(data: artwork!)
         self.duration = duration
         self.position = position
