@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/amk3y/DiscordRPC",
       "state" : {
-        "revision" : "2ebf067b5fe29992443a511c7ccf483c41660b7a",
-        "version" : "1.0.1"
+        "revision" : "902846dbe68cd560c2fd8c9b431596ce009cb9f2",
+        "version" : "1.0.2"
       }
     },
     {
